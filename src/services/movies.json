@@ -2,28 +2,28 @@
 
     {
         "id": "1",
-        "title": "Spirited Away",
+        "title": "SPIRITED AWAY",
         "genre": "Animation",
         "year": "2001",
         "imgUrl": "https://infoliteraria.com/wp-content/uploads/2021/05/El-Viaje-de-Chihiro.jpg"
     },
     {
         "id": "2",
-        "title": "Star Wars",
+        "title": "STAR WARS",
         "genre": "Science fiction",
         "year": "2019",
         "imgUrl": "https://play-lh.googleusercontent.com/v7-4k6oIeIq51Ms4S2ShtFIvdZ_9ipbVB0UzRLttDQBatpfBme5-upXvv49jd5wT5zc"
     },
     {
         "id": "3",
-        "title": "Edward Scissorhands",
+        "title": "EDWARD SCISSORHANDS",
         "genre": "Fantasy",
         "year": "1990",
         "imgUrl": "https://m.media-amazon.com/images/I/81ZZQ0f71WL._AC_SY550_.jpg" 
     },
     {
         "id": 4,
-        "title": "Ender's game",
+        "title": "ENDER'S GAME",
         "genre": "Science fiction",
         "year": "2013",
         "imgUrl": "https://occ-0-1001-999.1.nflxso.net/art/ff91e/57924889048db51f25eb029d4f8ec15b56cff91e.jpg"

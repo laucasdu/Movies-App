@@ -3,20 +3,32 @@
 .movieCard{
     width: 17%;
     margin: 1.5%;
+    filter: drop-shadow(0px 0px 3px #03112F );
+    border-radius: 5px 30px 45px 60px;
+    min-width: none;
+      
 }
 
 
 /* MOVIE IMAGE */
 
-.movieImg{
-    background-color: #212F3D;
-    position: relative;
-}
+/*.movieImg{
+    /*background-color: #212F3D;
+    position: relative;*/
+
 
 .movieImg img{
     width: 100%;
-    height: 100%;
+    height: 80%;
     object-fit:fill;
+}
+
+
+.movieImg img:hover{
+    width: 100%;
+    height: auto;
+    object-fit:cover;
+    opacity: 0.5;
 }
 
 
@@ -24,9 +36,7 @@
 
 .containerText{
     background-color: #17202A;
-    height: 20%;
     display: flex;
-    flex-direction: column;    
     align-items: center;
 }
 
@@ -34,36 +44,37 @@
     background-color: inherit;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 70%;
-    height: 100%;
+    width: 100%;
     margin-top: 4%;
-    margin-bottom: 2%;
 }
 
-.movieText h1{
+.movieText h2{
     background-color: inherit;
-    color:#AED6F1;
-    margin: 0;
-    padding: 0;
+    font-weight: bold;
+    color:#596FA8;
     font-weight: 100%;
-    font-size:1.6em;
+    font-size:0.8em;
     white-space: nowrap;
-    overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.movieText h3{
+.movieText h4{
     background-color: inherit;
     color:#EAECEE;
-    margin: 0;
-    padding: 0;
-    font-size: 1.3em;
+    font-size: 1em;
+    margin-top: 2%;
     font-weight: 500;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.year{
+    border-radius: 10%;
+    z-index: 3;
+    top: -83px;
+    position: relative;
 }
 
 .containerButton{
@@ -71,26 +82,51 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
-    height: 50%;
+    padding-top: 3%;
 }
 
 
 .buttonDelete{
     color:#EAECEE;
-    font-size: 140%;
-    background-color: transparent;
-    cursor: pointer;
+    font-size: 90%;
+    padding-top: 2%;
+    padding-bottom: 2%;
     width: 50%;
+    transition-duration: 0.4s;
+    background-color: #17202A;
+    color: #596FA8;
+    border-radius: 0.5px #596FA8;
 }
+
+.buttonDelete:hover{
+    background-color: #596FA8;
+    opacity: 0.5;
+    color:#EAECEE;
+}
+
+
+
+
 
 /* Botón eliminar */
 
 .buttonEdit{
     color:#EAECEE;
-    font-size: 140%;
-    background-color: transparent;
-    cursor: pointer;
+    font-size: 90%;
+    padding-top: 2%;
+    padding-bottom: 2%;
     width: 50%;
+    transition-duration: 0.4s;
+    background-color: #17202A;
+    color: #596FA8;
+    border-radius: 0.5px #596FA8;
+}
+
+
+.buttonEdit:hover{
+    background-color: #596FA8;
+    opacity: 0.5;
+    color:#EAECEE;
 }
 
 @media only screen and (max-width:450px) {
@@ -105,7 +141,7 @@
         font-size: small;
     }
     
-    .movieText h3{
+    .movieText h2{
         font-size: x-small;
     }
     

@@ -11,9 +11,9 @@ export class MovieCard extends Component {
         </div>
             <div className="containerText">
                 <div className="movieText">
-                <h1 className="title">{movie.title}</h1>
-                <h3 className="genre">{movie.genre}</h3>
-                <h3 className="yearProduction">{movie.year}</h3>
+                <h2 className="title">{movie.title}</h2>
+                <h4 className="genre">{movie.genre}</h4>
+                <h4 className="year">{movie.year}</h4>
             <div className="containerButton">
                 <button onClick={() =>this.props.deleteMovie(movie.id)} className="buttonDelete">Delete</button>
                 <button onClick={() =>this.props.editMovie(movie.id)} className="buttonEdit">Edit</button>
