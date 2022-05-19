@@ -1,0 +1,123 @@
+/* CARD */
+
+.movieCard{
+    width: 17%;
+    margin: 1.5%;
+}
+
+
+/* MOVIE IMAGE */
+
+.movieImg{
+    background-color: #212F3D;
+    position: relative;
+}
+
+.movieImg img{
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+}
+
+
+/* MOVIE INFO */
+
+.containerText{
+    background-color: #17202A;
+    height: 20%;
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+}
+
+.movieText{
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+    margin-top: 4%;
+    margin-bottom: 2%;
+}
+
+.movieText h1{
+    background-color: inherit;
+    color:#AED6F1;
+    margin: 0;
+    padding: 0;
+    font-weight: 100%;
+    font-size:1.6em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movieText h3{
+    background-color: inherit;
+    color:#EAECEE;
+    margin: 0;
+    padding: 0;
+    font-size: 1.3em;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.containerButton{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+}
+
+
+.buttonDelete{
+    color:#EAECEE;
+    font-size: 140%;
+    background-color: transparent;
+    cursor: pointer;
+    width: 50%;
+}
+
+/* Botón eliminar */
+
+.buttonEdit{
+    color:#EAECEE;
+    font-size: 140%;
+    background-color: transparent;
+    cursor: pointer;
+    width: 50%;
+}
+
+@media only screen and (max-width:450px) {
+    
+    
+    .movieCard{
+        width: 43%;
+        margin: 3.5%;
+    }
+    
+    .movieText h1{
+        font-size: small;
+    }
+    
+    .movieText h3{
+        font-size: x-small;
+    }
+    
+    .buttonDelete{
+        font-size: 60%;
+    }
+     
+    .buttonEdit{
+        font-size: 60%;
+    }
+
+    
+    
+
+}

@@ -1,0 +1,29 @@
+
+/* section */
+.list{
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.movieList{
+    background-color: #1B2631;
+    width: 100%;
+    height: unset;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width:450px) {
+
+    
+    .list {
+       height: 80%; 
+}
+
+}
