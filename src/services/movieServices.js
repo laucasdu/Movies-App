@@ -6,11 +6,11 @@ export const movieServices = {
     getAllMovies() {
         const movies = axios.get(baseURL + "/movies").then((res) => {
         return res.data;
-
     });
 
     return movies;
     },
+
 
     deleteMovie(id) {
         const deletedMovie = axios.delete(baseURL + "/movies/" + id);
@@ -24,5 +24,11 @@ export const movieServices = {
     
     },
 
+    updateMovie(data){
+
+        const updateMovie = axios.put(baseURL + "/movies/", data);
+        return updateMovie;
+    }, 
+    
 
 };

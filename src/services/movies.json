@@ -27,5 +27,33 @@
         "genre": "Science fiction",
         "year": "2013",
         "imgUrl": "https://occ-0-1001-999.1.nflxso.net/art/ff91e/57924889048db51f25eb029d4f8ec15b56cff91e.jpg"
+    },
+    {
+        "id": "5",
+        "title": "BIG FISH",
+        "genre": "Fantasy/Drama",
+        "year": "2003",
+        "imgUrl": "https://upload.wikimedia.org/wikipedia/en/4/41/Big_Fish_movie_poster.png"
+    },
+    {
+        "id": "6",
+        "title": "MY NEIGHBOR TOTORO",
+        "genre": "Animation",
+        "year": "1988",
+        "imgUrl": "https://static.wikia.nocookie.net/studio-ghibli/images/d/db/My_Neighbor_Totoro.jpg/revision/latest?cb=20220121193631"
+    },
+    {
+        "id": "7",
+        "title": "E.T",
+        "genre": "Science fiction/Adventure",
+        "year": "1982",
+        "imgUrl": "https://m.media-amazon.com/images/M/MV5BMTQ2ODFlMDAtNzdhOC00ZDYzLWE3YTMtNDU4ZGFmZmJmYTczXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg"
+    },
+    {
+        "id": "8",
+        "title": "LIFE IS BEAUTIFUL",
+        "genre": "War/Drama",
+        "year": "1997",
+        "imgUrl": "https://www.tuposter.com/pub/media/catalog/product/cache/image/700x560/91bbed04eb86c2a8aaef7fbfb2041b2a/f/i/file_13_15.jpg"
     }
 ]

@@ -27,18 +27,26 @@ export class MovieList extends Component {
     }
 
 
-    
-
-
-
 
     updateMovie = (newMovie) => {
-        let newMoviesState= this.state.movies;
+        /* let newMoviesState= this.state.movies;
         let movieToEditIndex= newMoviesState.findIndex(movie => movie.id === newMovie.id)
         newMoviesState[movieToEditIndex]=newMovie
         this.setState({movies:newMoviesState})
-        this.openForm()
-    };
+        this.openForm() */
+
+
+        movieServices.updateMovie(newMovie).then((res) => {
+            let newMoviesState= this.state.movies;
+            let movieToEditIndex= newMoviesState.findIndex(movie => movie.id === newMovie.id)
+            newMoviesState[movieToEditIndex]=newMovie
+            this.setState({movies:newMoviesState})
+            this.openForm()
+
+
+        })
+
+    }
 
 
     /* addNewMovie = (data) => {
