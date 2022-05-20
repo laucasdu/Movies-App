@@ -55,7 +55,7 @@
     font-weight: bold;
     color:#596FA8;
     font-weight: 100%;
-    font-size:0.8em;
+    font-size:1em;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
@@ -135,12 +135,12 @@
         margin: 3.5%;
     }
     
-    .movieText h1{
-        font-size: small;
+    .movieText h2{
+        font-size: 14px;
     }
     
-    .movieText h2{
-        font-size: x-small;
+    .movieText h4{
+        font-size: 10px;
     }
     
     .buttonDelete{

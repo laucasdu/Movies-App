@@ -20,7 +20,7 @@
     box-sizing: border-box;
   }
   
-  input[type=submit] {
+  .button_update {
     width: 100%;
     background-color: #1B2631;
     color: white;
@@ -33,8 +33,8 @@
     cursor: pointer;
   }
   
-  input[type=submit]:hover {
-    background-color: #AED6F1
+  .button_update:hover {
+    background-color: #596FA8;
   }
   
   .containerForm {
