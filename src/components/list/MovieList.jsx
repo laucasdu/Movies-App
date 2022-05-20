@@ -18,13 +18,19 @@ export class MovieList extends Component {
    
         };
     }
-
+    
     componentDidMount() {
-        this.setState({
-            movies: movieServices.getAllMovies(),
+        movieServices.getAllMovies().then((res) => { 
+            this.setState({movies : res });
         });
 
     }
+
+
+    
+
+
+
 
     updateMovie = (newMovie) => {
         let newMoviesState= this.state.movies;
@@ -53,8 +59,22 @@ export class MovieList extends Component {
         let deleteConfirmed = window.confirm("really delete?");
         if (!deleteConfirmed) return;// CLÀUSULA DE SALVAGUARDA
 
-        let filterMovies = this.state.movies.filter((movie) => movie.id !== id);
-        this.setState({ movies: filterMovies });
+       /*  let filterMovies = this.state.movies.filter((movie) => movie.id !== id);
+        this.setState({ movies: filterMovies }); */
+
+        movieServices.deleteMovie(id).then((res) => { 
+            if (res.status == 200){ 
+            let filterMovies = this.state.movies.filter((movie) => movie.id !== id);
+            this.setState({ movies: filterMovies });
+            }
+            /* if (res.status === 404){
+                alert ("not found")
+            } */
+            
+            console.log();
+        });
+
+
     };
 
 

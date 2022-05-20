@@ -48,7 +48,7 @@ export class MovieForm extends Component {
                     <input type="text" onChange={this.onInputChange} value={this.state.newMovie.title} name="title" placeholder="Title"/>
                     <input type="text" onChange={this.onInputChange} value={this.state.newMovie.year} name="year" placeholder="Year"/>
                     <input type="text" onChange={this.onInputChange} value={this.state.newMovie.genre} name="genre" placeholder="Genres"/>
-                    <input type="text" onChange={this.onInputChange} value={this.state.newMovie.imgUrl} name="imgURL" placeholder="Image URL"/>
+                    <input type="text" onChange={this.onInputChange} value={this.state.newMovie.imgUrl} name="imgUrl" placeholder="Image URL"/>
 
                 {this.state.editActive?
                 <button type="sudmit" className="button_update">UPDATE</button>
