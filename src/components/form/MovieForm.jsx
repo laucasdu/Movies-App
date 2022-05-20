@@ -11,40 +11,35 @@ export class MovieForm extends Component {
     }
 
 
-
-
    onInputChange = (e) => { 
-
-        let name= e.target.name; 
+        let name = e.target.name; 
         let value = e.target.value;
+    
+        //Els ... serveix per mantenir tota la info dels altres camps o no es sobreescriguin
+        this.setState({newMovie:{...this.state.newMovie,[name]:value}});
 
-        this.setState({newMovie:{...this.state.newMovie,[name]:value}})
-
-    }
+    };
 
     
-
     onSubmitHandler = (e) => {
-     e.preventDefault();
+        e.preventDefault();
     
-    if (this.state.newMovie.title.lenght > 0) {
-        !this.state.editActive ? 
-        this.props.addNewMovie(this.state.newMovie)
-        : this.props.updateMovie(this.state.newMovie)
-    }
-    
-    this.resetInputsForm();
-    };
-
-
-    //Extraxt to method
-    resetInputsForm = () => {
+        if (this.state.newMovie.title.length > 0){
+            !this.state.editActive ? 
+            this.props.addMovie(this.state.newMovie) 
+            :
+            this.props.updateMovie(this.state.newMovie)
+        }
         
-        this.setState({newMovie:{id: '', title:'', year:'', genre:'', imgUrl: ''}})
+        this.resetInputsForm(e);
+        };
+
+
+    resetInputsForm = () => {
+        this.setState({newMovie:{id:'', title:'', year:'', genre:'', imgUrl:''}})
+        //per buidar el formulari
 
     };
-   
-    
 
     render() {
         return (<section className="form">
@@ -53,7 +48,7 @@ export class MovieForm extends Component {
                     <input type="text" onChange={this.onInputChange} value={this.state.newMovie.title} name="title" placeholder="Title"/>
                     <input type="text" onChange={this.onInputChange} value={this.state.newMovie.year} name="year" placeholder="Year"/>
                     <input type="text" onChange={this.onInputChange} value={this.state.newMovie.genre} name="genre" placeholder="Genres"/>
-                    <input type="text" onChange={this.onInputChange} value={this.state.newMovie.imgUrl} name="img URL" placeholder="Image URL"/>
+                    <input type="text" onChange={this.onInputChange} value={this.state.newMovie.imgUrl} name="imgURL" placeholder="Image URL"/>
 
                 {this.state.editActive?
                 <button type="sudmit" className="button_update">UPDATE</button>

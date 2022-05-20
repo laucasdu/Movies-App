@@ -7,7 +7,7 @@ export class MovieCard extends Component {
         return (
         <div className="movieCard">
         <div className="movieImg">
-        <img src={movie.imgUrl} alt={movie.title}/>
+        <img className="img" src={movie.imgUrl} alt={movie.title}/>
         </div>
             <div className="containerText">
                 <div className="movieText">
