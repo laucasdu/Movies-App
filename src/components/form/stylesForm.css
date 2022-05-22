@@ -7,6 +7,7 @@
   display: flex;
   justify-content:center;
   align-items: center;
+  background: #061729;
 }
 
 
@@ -20,6 +21,25 @@
     box-sizing: border-box;
   }
   
+  .button_create {
+    width: 100%;
+    background-color: #061729;
+    color: white;
+    font-weight: 600;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .button_create:hover {
+    background-color: #596FA8;
+  }
+
+
   .button_update {
     width: 100%;
     background-color: #1B2631;
@@ -41,10 +61,22 @@
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+    margin-bottom: 3%;
     margin-top: 5%;
     width: 50%;
     justify-content: center;
     align-items: center;
+  }
+
+  .container-img {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+
+
+
+
+
   }
 
   @media only screen and (max-width:450px) {

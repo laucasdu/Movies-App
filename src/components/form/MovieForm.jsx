@@ -16,7 +16,7 @@ export class MovieForm extends Component {
         let value = e.target.value;
     
         //Els ... serveix per mantenir tota la info dels altres camps o no es sobreescriguin
-        this.setState({newMovie:{...this.state.newMovie,[name]:value}});
+        this.setState({newMovie:{...this.state.newMovie,[name]:value}}); // name: es diu aixi ja que agafara el name del formulari
 
     };
 
@@ -34,10 +34,10 @@ export class MovieForm extends Component {
         this.resetInputsForm(e);
         };
 
-
+    //mètode que serveix per buidar el formulari
     resetInputsForm = () => {
         this.setState({newMovie:{id:'', title:'', year:'', genre:'', imgUrl:''}})
-        //per buidar el formulari
+        
 
     };
 
@@ -48,8 +48,8 @@ export class MovieForm extends Component {
                     <input type="text" onChange={this.onInputChange} value={this.state.newMovie.title} name="title" placeholder="Title"/>
                     <input type="text" onChange={this.onInputChange} value={this.state.newMovie.year} name="year" placeholder="Year"/>
                     <input type="text" onChange={this.onInputChange} value={this.state.newMovie.genre} name="genre" placeholder="Genres"/>
-                    <input type="text" onChange={this.onInputChange} value={this.state.newMovie.imgUrl} name="imgUrl" placeholder="Image URL"/>
-
+                    <input type="text" className= "container-img" onChange={this.onInputChange} value={this.state.newMovie.imgUrl} name="imgUrl" placeholder="Image URL"/>
+            
                 {this.state.editActive?
                 <button type="sudmit" className="button_update">UPDATE</button>
                 : <button type="sudmit" className="button_create">CREATE</button>

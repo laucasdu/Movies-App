@@ -19,6 +19,8 @@ export class MovieList extends Component {
         };
     }
     
+
+    // Mètode que crida totes les películes de l'array de services
     componentDidMount() {
         movieServices.getAllMovies().then((res) => { 
             this.setState({movies : res });
@@ -26,27 +28,26 @@ export class MovieList extends Component {
 
     }
 
-
-
-    updateMovie = (newMovie) => {
-        /* let newMoviesState= this.state.movies;
-        let movieToEditIndex= newMoviesState.findIndex(movie => movie.id === newMovie.id)
-        newMoviesState[movieToEditIndex]=newMovie
-        this.setState({movies:newMoviesState})
-        this.openForm() */
-
-
-        movieServices.updateMovie(newMovie).then((res) => {
-            let newMoviesState= this.state.movies;
-            let movieToEditIndex= newMoviesState.findIndex(movie => movie.id === newMovie.id)
-            newMoviesState[movieToEditIndex]=newMovie
+ /* updateMovie = (newMovie) => {
+            let newMoviesState = this.state.movies; //nou array igual que l'original
+            let movieToEditIndex = newMoviesState.findIndex(movie => movie.id === newMovie.id) //busquem l'index que sigui igual al que volem canviar
+            newMoviesState[movieToEditIndex] = newMovie //del la nova llista newMoviesState busquem l'index [movieToEditIndex] i li asignem a newMovie
             this.setState({movies:newMoviesState})
             this.openForm()
+    }; */
+    
 
+     updateMovie = (newMovie) => {
+        movieServices.addMovie(newMovie.id, (newMovie)).then((res) => {
+            let newMoviesState = this.state.movies; //nou array igual que l'original
+            let movieToEditIndex = newMoviesState.findIndex(movie => movie.id === newMovie.id) //busquem l'index que sigui igual al que volem canviar
+            newMoviesState[movieToEditIndex] = newMovie //del la nova llista newMoviesState busquem l'index [movieToEditIndex] i li asignem a newMovie
+            this.setState({movies:newMoviesState})
+            this.openForm()
+            
+        });
 
-        })
-
-    }
+    };
 
 
     /* addNewMovie = (data) => {
@@ -67,36 +68,23 @@ export class MovieList extends Component {
 
     }
 
-
     deleteMovie = (id) => {
         let deleteConfirmed = window.confirm("really delete?");
-        if (!deleteConfirmed) return;// CLÀUSULA DE SALVAGUARDA
-
-       /*  let filterMovies = this.state.movies.filter((movie) => movie.id !== id);
-        this.setState({ movies: filterMovies }); */
+        if (!deleteConfirmed) return;// És dir, clàusula de salvaguarda
+        let filterMovies = this.state.movies.filter((movie) => movie.id !== id);
+        this.setState({ movies: filterMovies });
 
         movieServices.deleteMovie(id).then((res) => { 
-            if (res.status == 200){ 
-            let filterMovies = this.state.movies.filter((movie) => movie.id !== id);
+            if (res.status === 200){ //Codi 200 significa que la pàgina ha carregat correctament
             this.setState({ movies: filterMovies });
             }
-            /* if (res.status === 404){
-                alert ("not found")
-            } */
-            
-            console.log();
+           
         });
 
 
     };
 
-
-    openForm = () => {
-        if (this.state.viewform) this.setState({viewform:false});
-        else this.setState({viewform:true});
-    };
-
-
+    //Mètode per editar el formulari
     editMovie = (id) => {
         this.openForm();
         let editedMovie = this.state.movies.find(movie => movie.id === id);
@@ -104,6 +92,15 @@ export class MovieList extends Component {
 
         this.setState({editActive:true});
     };
+
+
+    //Mètode per obrir el formulari
+    openForm = () => {
+        if (this.state.viewform) this.setState({viewform:false});
+        else this.setState({viewform:true});
+    };
+
+
 
     render() {
         return (
