@@ -6,7 +6,8 @@
     filter: drop-shadow(2px 1px 6px #061729 );
     border-radius: 5px 30px 45px 60px;
     position: relative;
-    align-items: center;     
+    align-items: center; 
+    object-fit: cover;    
 }
 
 /* MOVIE IMAGE */
