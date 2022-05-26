@@ -5,7 +5,7 @@ import Movie from '../pages/Movie';
  
 export default function Router() {
   return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
             <Route path="/" element = {<App/>}/>
             <Route path="/Movie" element = {<Movie/>}/>
