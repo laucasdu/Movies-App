@@ -18,9 +18,9 @@ export class MovieList extends Component {
    
         };
     }
-    
+  
 
-    // Funció que crida totes les películes de l'array de services
+    // Funció que crida totes les pel·lícules de l'array de services
     componentDidMount() {
         movieServices.getAllMovies().then((res) => { 
             this.setState({movies : res });
@@ -28,45 +28,7 @@ export class MovieList extends Component {
 
     }
 
- /* updateMovie = (newMovie) => {
-            let newMoviesState = this.state.movies; //nou array igual que l'original
-            let movieToEditIndex = newMoviesState.findIndex(movie => movie.id === newMovie.id) //busquem l'index que sigui igual al que volem canviar
-            newMoviesState[movieToEditIndex] = newMovie //del la nova llista newMoviesState busquem l'index [movieToEditIndex] i li asignem a newMovie
-            this.setState({movies:newMoviesState})
-            this.openForm()
-    }; */
-
-    updateMovie = (newMovie) => {
-        let newMoviesState = this.state.movies; //nou array de la nova pelicula, igual que l'original
-        let movieToEditIndex = newMoviesState.findIndex(movie => movie.id === newMovie.id) //busquem l'index que sigui igual al que volem canviar
-        
-        movieServices.updateMovie(newMovie.id, newMovie).then((res) => {
-            newMoviesState[movieToEditIndex] = res //del la nova llista newMoviesState busquem l'index [movieToEditIndex] i li asignem a newMovie
-            this.setState({movies:newMoviesState})
-
-        })
-        this.openForm()
-    }  
-
-
-    /* addNewMovie = (data) => {
-        data.id = createUuid();
-        this.setState({ movies: [...this.state.movies, data] });
-        this.setState({ viewform:false});
-
-    }; */
-
-    addMovie = (data) => {
-        data.id = createUuid();
-
-        movieServices.addMovie(data).then((res) => {
-            this.setState({ movies: [...this.state.movies, res] }) 
-            this.setState({ viewform:false});
-
-        })
-        this.openForm()
-    }
-
+    // Funció per eliminar una pel·lícula
     deleteMovie = (id) => {
         let deleteConfirmed = window.confirm("really delete?");
         if (!deleteConfirmed) return;// És dir, clàusula de salvaguarda
@@ -77,13 +39,49 @@ export class MovieList extends Component {
             if (res.status === 200){ //Codi 200 significa que la pàgina ha carregat correctament
             this.setState({ movies: filterMovies });
             }
+            // if (res.status == 404) {
+            //     alert("not found")
+            // }
+            // console.log(res)
            
         });
 
 
     };
 
-    // Funció per editar una pelicula
+
+    // Funció per afegir una pel·lícula
+    addMovie = (data) => {
+        data.id = createUuid();
+
+        movieServices.addMovie(data).then((res) => {
+            this.setState({ movies: [...this.state.movies, res] }) 
+            this.setState({ viewform:false});
+
+        })
+        this.openForm()
+    }
+    
+
+
+    // Funció que afegir una pel·lícules
+    updateMovie = (newMovie) => {
+        let newMoviesState = this.state.movies; //nou array de la nova pelicula, igual que l'original
+        let movieToEditIndex = newMoviesState.findIndex(movie => movie.id === newMovie.id) //busquem l'index que sigui igual al que volem canviar
+        
+        movieServices.updateMovie(newMovie.id, newMovie).then((res) => {
+            newMoviesState[movieToEditIndex] = res //del la nova llista newMoviesState busquem l'index [movieToEditIndex] i li asignem a newMovie
+            this.setState({movies:newMoviesState})
+
+        })
+        this.openForm()
+        this.resetInputsForm()
+        this.setState({editActive: false});
+
+    }  
+
+
+    // Funció per editar una pel·lícula
     editMovie = (id) => {
         this.openForm();
         // Creem una variable que es diu editedMovie que busqui l'identificador de la pelicula que volem editar
@@ -98,6 +96,14 @@ export class MovieList extends Component {
     openForm = () => {
         if (this.state.viewform) this.setState({viewform:false});
         else this.setState({viewform:true});
+        this.resetInputsForm()
+        this.setState({editActive: false});
+
+    };
+    
+    //Funció que serveix per buidar el formulari
+    resetInputsForm = () => {
+        this.setState({editedMovie:{id:'', title:'', year:'', genre:'', imgUrl:''}})   
     };
 
 
@@ -108,24 +114,17 @@ export class MovieList extends Component {
 
                 <button onClick={ this.openForm } className="add-button">ADD MOVIE</button>
 
-                {/* {this.state.viewform ? 
-                <button onClick={this.openForm} type="button" >CLOSE</button> :
-                <button onClick={this.openForm} type="button" >ADD MOVIE</button> 
-                } */}
-
                 {this.state.viewform ? <MovieForm 
                 addMovie={this.addMovie} // Pasar paràmetres d'un component a un altre
                 editedMovie={this.state.editedMovie} 
                 editActive={this.state.editActive} 
                 updateMovie={this.updateMovie}/>: ''}
                 
-                <div className="list">
                 <div className="movieList">
                     {this.state.movies.map((movie, key) => (
                         <MovieCard key={key} movie={movie} deleteMovie={this.deleteMovie} editMovie={this.editMovie} />
                     ))}           
                 </div>
-            </div>
           </section>
         );
     }

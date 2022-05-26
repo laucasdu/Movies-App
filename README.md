@@ -1,3 +1,47 @@
+
+MOVIE APP
+============
+
+## Table of Contents
+1. [BRIEFING](#BRIEFING)
+2. [TECHNOLOGIES](#TECHNOLOGIES)
+3. [INSTALLATION](#INSTALLATION)
+
+***
+
+## 🚧 CONSTRUCTION
+
+Project in process.
+
+## 📄 BRIEFING
+
+This is a favorite movie website. developed with react.js. It is using react-router-dom v.6 to navigate between pages. The application is separated by components and using styled components.
+
+### ✅ OBJECTIVES
+
+- Make a crud with responsive 
+- Separated by components and using styled components
+- Create an array in a Json file 
+
+## 👁️‍🗨️ IU DESIGN
+![1]()
+![2]()
+![3]()
+![4]()
+
+## 💻  TECHNOLOGIES
+- HTML 5
+- CSS 3
+- JS ES6 VANILLA
+- REACT
+
+## ⚙️ INSTALLATION
+- Required React v.17.0.2
+- Required node.js
+- git clone <repository>
+- npm start
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

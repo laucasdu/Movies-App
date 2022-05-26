@@ -26,20 +26,18 @@ export class MovieForm extends Component {
     
         if (this.state.newMovie.title.length > 0){
             !this.state.editActive ? 
-            this.props.addMovie(this.state.newMovie) 
-            :
-            this.props.updateMovie(this.state.newMovie)
+            this.props.addMovie(this.state.newMovie) // this.state.newMovie representa "data" de la funció addMovie
+            : this.props.updateMovie(this.state.newMovie) // this.state.newMovie representa "newMovie" de la funció updateMovie
         }
         
-        this.resetInputsForm(e);
+        this.props.resetInputsForm(e);
         };
 
-    //Funció que serveix per buidar el formulari
+     /* //Funció que serveix per buidar el formulari
     resetInputsForm = () => {
         this.setState({newMovie:{id:'', title:'', year:'', genre:'', imgUrl:''}})
-        
 
-    };
+    };  */
 
     render() {
         return (<section className="form">
@@ -48,7 +46,7 @@ export class MovieForm extends Component {
                     <input type="text" onChange={this.onInputChange} value={this.state.newMovie.title} name="title" placeholder="Title"/>
                     <input type="text" onChange={this.onInputChange} value={this.state.newMovie.year} name="year" placeholder="Year"/>
                     <input type="text" onChange={this.onInputChange} value={this.state.newMovie.genre} name="genre" placeholder="Genres"/>
-                    <input type="text" onChange={this.onInputChange} value={this.state.newMovie.imgUrl} name="imgUrl" placeholder="Image URL"/>
+                    <input type="text" onChange={this.onInputChange} value={this.state.newMovie.imgUrl} name="imgUrl" placeholder="Cover image URL"/>
             
                 {this.state.editActive?
                 <button type="sudmit" className="button_update">UPDATE</button>
