@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { MovieList } from '../components/list/MovieList'
+import { MovieListF } from '../components/list/MovieListF'
 
 export default class Home extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class Home extends Component {
         <Link to="/Movie">        
             </Link>
         
-          <MovieList/>
+          <MovieListF/>
       </div>
     )
   }
