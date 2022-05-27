@@ -19,8 +19,8 @@ export const movieServices = {
 
 
     addMovie(data) {
-        const addMovie = axios.post(baseURL + "/movies/", data).then((res) => res.data);
-            return addMovie;
+        const addNewMovie = axios.post(baseURL + "/movies/", data).then((res) => res.data);
+            return addNewMovie;
         },
     
     
