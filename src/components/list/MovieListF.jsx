@@ -79,6 +79,8 @@ export function MovieListF() {
         if (viewForm)setViewForm(false);
         else setViewForm(true);
         resetInputsForm()
+        setEditActive(true);
+
 
     };
     
@@ -99,7 +101,8 @@ export function MovieListF() {
                 addMovie={addMovie} // Pasar paràmetres d'un component a un altre
                 editedMovie={editedMovie} 
                 editActive={editActive} 
-                updateMovie={updateMovie}/>: ''}
+                updateMovie={updateMovie}
+                resetInputsForm={resetInputsForm}/>: ''}
                 
                 <div className="movieList">
                     {movies.map((movie, key) => (
