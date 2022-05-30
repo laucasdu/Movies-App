@@ -1,18 +1,17 @@
-import React from 'react';
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from '../App';
-import Movie from '../pages/Movie';
+import Home from "../pages/Home";
+import { MoviePage } from "../pages/MoviePage";
 
- 
-export default function Router() {
+export default function Router () {
+
   return (
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
-        <Routes>
-            <Route path="/" element = {<App/>}/>
-            <Route path="/Movie" element = {<Movie/>}/>
-
-        </Routes> 
-      
-      </BrowserRouter>
-  )
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movie" element={<MoviePage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }

@@ -1,10 +1,13 @@
+import { Link } from "react-router-dom";
+
+
 
 export function MovieCardF ({movie, deleteMovie, editMovie}) {
     
         return (
         <div className="movieCard">
-            {/* <Link to="/Movie"><button className="button_info"><i className="fa-solid fa-x"></i></button></Link>          */}
-        <div className="movieImg">
+                <Link to="/movie"><button className="button_info"><i className="fa-solid fa-x"></i></button></Link>
+         <div className="movieImg">
         <img className="movieImg_img" src={movie.imgUrl} alt={movie.title}/>
         </div>
             <div className="containerText">
