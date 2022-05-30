@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { movieServices } from "../../services/movieServices";
 import { MovieCardF } from "../card/MovieCardF";
-import { MovieForm } from "../form/MovieForm";
+import { MovieFormF } from "../form/MovieFormF";
 
 
 export function MovieListF() {
@@ -10,9 +10,9 @@ export function MovieListF() {
     const [editActive, setEditActive] = useState(false);
     const [editedMovie, setEditedMovie] = useState({
       id: "",
-      title: "",
-      imgUrl: "",
       year: "",
+      title: "",
+      genre: "",
       imgUrl: "",
         });
 
@@ -95,7 +95,7 @@ export function MovieListF() {
                 <button onClick={openForm } className="add-button">ADD MOVIE</button>
 
                 {viewForm ? 
-                <MovieForm 
+                <MovieFormF 
                 addMovie={addMovie} // Pasar paràmetres d'un component a un altre
                 editedMovie={editedMovie} 
                 editActive={editActive} 
