@@ -1,15 +1,12 @@
 /* CARD */
 
 .movieCard{
-    /*width: 17%;*/
     display: flex;
     flex-direction: column;
     margin: 5%;
     filter: drop-shadow(2px 1px 6px #061729 );
     position: relative;
     border-radius : 8px;
-
-     
 }
 
 /* MOVIE IMAGE */
@@ -60,7 +57,7 @@
     width: 100%;
 }
 
-.title{
+.title-movie{
     background-color: inherit;
     font-weight: bold;
     color:#596FA8;
@@ -85,12 +82,6 @@
 .year{
     background-color: inherit;
     color:#EAECEE;
-    /* font-size: 1em;
-    margin-top: 2%;
-    font-weight: 500;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; */
     border-radius: 8%;
     top: -30px;
     position: absolute;
@@ -117,6 +108,7 @@
     background-color: #17202A;
     color:#EAECEE;
     border-radius: 0.5px #596FA8;
+    cursor: pointer; 
 
 }
 
@@ -128,7 +120,6 @@
 
 
 /* Botón eliminar */
-
 
  .buttonEdit{
     font-size: 90%;
@@ -180,23 +171,14 @@ a:active{
     top: 3%;
     right: 5%;
     font-size: 18px;
+    cursor: pointer; 
+
 }
 
 .button_info:hover{
      background-color: #596FA8;
      color: #b3aca7;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -215,8 +197,7 @@ a:active{
         width: 2em;
         height: 2em;
         font-size: 11px;
-    }
-     
+    } 
 
 }
 

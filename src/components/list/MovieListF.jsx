@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { movieServices } from "../../services/movieServices";
 import { MovieCardF } from "../card/MovieCardF";
 import { MovieFormF } from "../form/MovieFormF";
+import Loader from "../loader/Loader";
 
 
 
@@ -11,8 +12,7 @@ export function MovieListF() {
     const [viewForm, setViewForm] = useState(false);
     const [editActive, setEditActive] = useState(false);
     const [editedMovie, setEditedMovie] = useState('')
-
-    // const [isLoading, setIsLoading] = useState (false)
+    const [isLoading, setIsLoading] = useState (false)
 
       
         useEffect(() => {
@@ -21,10 +21,10 @@ export function MovieListF() {
     
 
         const getAllMovies = () => {
-            // setIsLoading(true);
+            setIsLoading(true);
             movieServices.getAllMovies().then((res) => { 
                 setMovies(res);
-            // setIsLoading(false);
+            setIsLoading(false);
          });
  
      };
@@ -86,7 +86,6 @@ export function MovieListF() {
 
         return (
             <section>
-
                 <button onClick={openForm } className="add-button">ADD MOVIE</button>
                 {viewForm ? 
                 <MovieFormF 
@@ -96,7 +95,8 @@ export function MovieListF() {
                 updateMovie={updateMovie}
                 resetInputsForm={resetInputsForm}/>: ''}
                 
-                
+                {isLoading && <Loader/>}
+
                 (<div className="movieList">
                     {movies.map((movie, key) => (
                         <MovieCardF 

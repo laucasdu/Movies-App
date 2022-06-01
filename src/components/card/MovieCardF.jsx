@@ -13,7 +13,7 @@ export function MovieCardF ({movie, deleteMovie, editMovie}) {
         </div>
             <div className="containerText">
                 <div className="movieText">
-                <h2 className="title">{movie.title}</h2>
+                <h2 className="title-movie">{movie.title}</h2>
                 <h4 className="genre">{movie.genre}</h4>
                 <h4 className="year">{movie.year}</h4>
             <div className="containerButton">

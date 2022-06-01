@@ -1,48 +1,21 @@
 
 
 .navBar {
-    background: #061729;
-    display: flex;
-    align-items: center;
-    padding: 20px;;
-  
-  }
-  
-  .title {
-    width: 30%;
-    margin-left: 2%;
-    font-size: 1.1em;
-    color: #596FA8;
-    background: #061729;
+
+  background: rgba(0,0,0,0.9);
+  width: 100vw;
+  height: 5vw;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+  flex-direction: row;
+
 }
-  
-  .time {
-    color: white;
-  }
-  
-  .navButtons {
-    width: 30%;
-    background-color: rgb(24, 23, 23);
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .navBut {
-    border: none;
-    background-color: rgb(24, 23, 23);
-    color: white;
-    font-weight: bold;
-    font-size: 0.9em;
-    padding-top: 10%;
-    padding-bottom: 5%;
-    width: 100%;
-    border-radius: 1.2vw;
-  }
-  
-  .navBut:hover {
-    background-color: rgb(15, 14, 14);
-    border-style: solid;
-    border-color: orange;
-    font-size: 1.2em;
-  }
-  
+
+.title-logo{
+padding-top: 2rem;
+align-items: center;
+
+}
+
