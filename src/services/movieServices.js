@@ -1,8 +1,18 @@
 import axios from "axios";
 
 const baseURL = "https://62866d7696bccbf32d75019d.mockapi.io";
+
+
 export const movieServices = {
     
+
+    
+    getOneMovies(id) {
+        const deletedMovie = axios.get(baseURL + "/movies/" + id).then((res) => res.data);
+        return deletedMovie;
+        },
+
+
     getAllMovies() {
         const movies = axios.get(baseURL + "/movies").then((res) => {
         return res.data;
@@ -10,7 +20,6 @@ export const movieServices = {
 
     return movies;
     },
-
 
     deleteMovie(id) {
         const deletedMovie = axios.delete(baseURL + "/movies/" + id).then((res) => res.data);
@@ -23,12 +32,18 @@ export const movieServices = {
             return addNewMovie;
         },
     
-    
 
     updateMovie(id, newMovie) {
         const updateMovie = axios.put (baseURL + "/movies/"+ id, newMovie).then((res) => res.data);
             return updateMovie;
 
         }
-    
-};
+
+ };
+
+
+
+
+
+
+

@@ -11,8 +11,9 @@ export default function Router () {
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/" element={<Home />} />
-        <Route path="/movie" element={<MoviePage />} />
+        <Route path="/movies/:id" element={<MoviePage />} />
       </Routes>
     </BrowserRouter>
   );
 }
+

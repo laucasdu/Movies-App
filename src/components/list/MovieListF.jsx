@@ -4,24 +4,21 @@ import { MovieCardF } from "../card/MovieCardF";
 import { MovieFormF } from "../form/MovieFormF";
 
 
+
 export function MovieListF() {
+
     const [movies, setMovies] = useState([]);
     const [viewForm, setViewForm] = useState(false);
     const [editActive, setEditActive] = useState(false);
-    const [editedMovie, setEditedMovie] = useState({
-      id: "",
-      year: "",
-      title: "",
-      genre: "",
-      imgUrl: "",
-        });
+    const [editedMovie, setEditedMovie] = useState('')
 
-    
     // const [isLoading, setIsLoading] = useState (false)
 
+      
         useEffect(() => {
             getAllMovies();
         }, []);
+    
 
         const getAllMovies = () => {
             // setIsLoading(true);
@@ -51,20 +48,18 @@ export function MovieListF() {
         };
 
 
-    const updateMovie = (newMovie) => {
-        let newMoviesState = movies; //nou array de la nova pelicula, igual que l'original
-        let movieToEditIndex = newMoviesState.findIndex(movie => movie.id === newMovie.id) //busquem l'index que sigui igual al que volem canviar
-        
-        movieServices.updateMovie(newMovie.id, newMovie).then((res) => {
-             newMoviesState[movieToEditIndex] = res //del la nova llista newMoviesState busquem l'index [movieToEditIndex] i li asignem a newMovie
-                setMovies(newMoviesState)
+    //FUNCIÓ PER CANVIAR UNA PEL·LÍCULA
+        const updateMovie = (newMovie) => {
+            movieServices.updateMovie(newMovie.id, newMovie).then((res) => {
+            let movieToUpdate = movies.map((movie) => movie.id === newMovie.id ? newMovie : movie)
+            setMovies(movieToUpdate)
+            // .catch((err) => console.log(err))
+        })
+        openForm()
+        resetInputsForm()
+        setEditActive(false)  
+    };
 
-         })
-            setViewForm()
-            resetInputsForm()
-            setEditActive(false);
-
-    }; 
 
     // Funció per editar una pel·lícula
     const editMovie = (id) => {
@@ -79,13 +74,11 @@ export function MovieListF() {
         if (viewForm)setViewForm(false);
         else setViewForm(true);
         resetInputsForm()
-        setEditActive(true);
-
-
+        setEditActive(false)  
     };
     
     //Funció que serveix per buidar el formulari
-    const resetInputsForm = (e) => {
+    const resetInputsForm = () => {
         setEditedMovie({id:'', title:'', year:'', genre:'', imgUrl:''})   
     };
 
@@ -95,7 +88,6 @@ export function MovieListF() {
             <section>
 
                 <button onClick={openForm } className="add-button">ADD MOVIE</button>
-
                 {viewForm ? 
                 <MovieFormF 
                 addMovie={addMovie} // Pasar paràmetres d'un component a un altre
@@ -104,15 +96,16 @@ export function MovieListF() {
                 updateMovie={updateMovie}
                 resetInputsForm={resetInputsForm}/>: ''}
                 
-                <div className="movieList">
+                
+                (<div className="movieList">
                     {movies.map((movie, key) => (
                         <MovieCardF 
                         key={key} 
                         movie={movie} 
                         deleteMovie={deleteMovie} 
                         editMovie={editMovie} />
-                    ))}           
-                </div>
+                    ))}    
+                </div>)     
           </section>
         );
     }

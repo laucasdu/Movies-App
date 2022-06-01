@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 export function MovieCardF ({movie, deleteMovie, editMovie}) {
     
         return (
+            
         <div className="movieCard">
-                <Link to="/movie"><button className="button_info"><i className="fa-solid fa-x"></i></button></Link>
+            <Link to = {`/movies/${movie.id}`}><button className="button_info"><i className="fa-solid fa-info"></i></button></Link>
          <div className="movieImg">
         <img className="movieImg_img" src={movie.imgUrl} alt={movie.title}/>
         </div>
@@ -24,6 +25,7 @@ export function MovieCardF ({movie, deleteMovie, editMovie}) {
             </div>
         </div>
         </div>
+        
         );
 } 
 

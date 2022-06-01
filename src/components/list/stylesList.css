@@ -14,7 +14,6 @@
 
 .movieList{
     background-color: #1B2631;
-    
     /* width: 100%;
     height: 50%;
     height: unset;
@@ -35,14 +34,15 @@
 
 .add-button{
     width: 100vw;
-    padding: 0.3%;
     font-size: 16px;
-    align-items: center;
     justify-content: center;
+    align-items: flex-end;
     display: flex;
+    height: 2vw;
     margin: 0%;
     font-weight: 600;
-    color: #061729;    
+    color: #061729;   
+
 }
 
 
