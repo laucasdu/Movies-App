@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-
-
 export function MovieFormF ({addMovie,updateMovie,resetInputsForm,editActive, editedMovie}) {
 
     const [newMovies, setNewMovies] = useState(editedMovie);

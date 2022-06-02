@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { movieServices } from "../services/movieServices";
-import Navbar from '../components/navbar/Navbar'
 
 
 
@@ -29,7 +28,6 @@ export function MoviePage() {
         <>       
         
         <div className="Nav">
-        <Navbar></Navbar>
         </div>
 
         <section className='containerPage'> 

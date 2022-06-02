@@ -10,7 +10,7 @@ export default function Router () {
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/movies/:id" element={<MoviePage />} />
       </Routes>
     </BrowserRouter>

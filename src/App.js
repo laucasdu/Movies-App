@@ -1,16 +1,19 @@
 import './components/main.css'
-import Home from "./pages/Home";
+import Navbar from './components/navbar/Navbar';
+import Home from './pages/Home';
 
 
 
-function App() {
+export default function App() {
+  
   return (
     
     <div className="App">
-        <Home/>
+      <Navbar/>
+      <Home/>
+
     </div>
 
   );
 }
 
-export default App;
