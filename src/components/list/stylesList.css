@@ -1,50 +1,82 @@
 
-/* section */
-/* .list{
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-color: blue;
-
-
-
-} */
 
 .movieList{
-    background-color: #1B2631;
-    /* width: 100%;
-    height: 50%;
-    height: unset;
-    display: flex;
-    flex-wrap: wrap;
-    overflow-y: auto;
-    justify-content: center;
-    align-items: center; */
-    /*grid-template-columns: repeat(auto, 20%);*/
+    background-color: #F1F0F0;
     justify-content: center;
     grid-template-columns: 20% 20% 20% 20%;
     display: grid;
-    padding: 2em 2em;
     gap: 2em; 
 }
 
 
 
-.add-button{
+/* .add-button{
     width: 100vw;
+    height: 4em;
     font-size: 16px;
     justify-content: center;
-    align-items: flex-end;
+    align-items: left;
     display: flex;
-    height: 2vw;
     margin: 0%;
+    background-color: #000000;
     font-weight: 600;
-    color: #061729;  
-    padding-top: 8%;
+    color: #F1F0F0;  
+} */
 
+
+
+.add-button{
+    font-family: 'Rubik', sans-serif;
+    width: 100vw;
+    height: 4em;
+    justify-content: left;
+    align-items: center;
+    margin: 0%;
+    color: #000000;  
+    font-size: 23px;
+    letter-spacing: 1px;
+    padding: 13px 30px 13px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
 }
+
+
+      
+      
+.add-button {
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 13px 50px 13px;
+    outline: 0;
+    font-weight: 600;
+    font-size: 23px;
+    cursor: pointer;
+    position: relative;
+    color:#252839;
+  }
+  
+  .add-button:after {
+    content: "";
+    background-color: #bd0a31;
+
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+  }
+  
+  .add-button:hover::after {
+    top: 0px;
+    left: 0px;
+  }
+
 
 
 

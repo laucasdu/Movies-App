@@ -1,0 +1,22 @@
+
+
+
+.Slider-container{
+
+    width: 100vw;
+    /* height:34em; */
+    overflow: hidden;
+    justify-content: center;
+/* padding-top: 100px; */
+
+}
+
+.image{
+
+    width: 100vw;
+    height: -40em;
+    object-fit: cover;
+
+}
+
+

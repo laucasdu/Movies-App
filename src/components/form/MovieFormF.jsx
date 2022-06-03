@@ -21,7 +21,8 @@ export function MovieFormF ({addMovie,updateMovie,resetInputsForm,editActive, ed
             !editActive ? 
             addMovie(newMovies) 
             : updateMovie(newMovies); 
-        
+    
+        // seteditActive() //ATENCIÓ: el botó add i update no canvia però el tipus de dades del form sí.
          resetInputsForm(e);
 
         };

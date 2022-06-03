@@ -3,6 +3,7 @@ import { movieServices } from "../../services/movieServices";
 import { MovieCardF } from "../card/MovieCardF";
 import { MovieFormF } from "../form/MovieFormF";
 import Loader from "../loader/Loader";
+import Slider from "../slider/Slider";
 
 
 
@@ -37,7 +38,7 @@ export function MovieListF() {
         });
     };
 
-
+    // Funció per afegir una pel·lícula
     const addMovie = (data) => {
         movieServices.addMovie(data).then((res) => {
             setMovies([...movies, res]);
@@ -48,7 +49,7 @@ export function MovieListF() {
         };
 
 
-    //FUNCIÓ PER CANVIAR UNA PEL·LÍCULA
+    //Funció per canviar una peli·lícula
         const updateMovie = (newMovie) => {
             movieServices.updateMovie(newMovie.id, newMovie).then((res) => {
             let movieToUpdate = movies.map((movie) => movie.id === newMovie.id ? newMovie : movie)
@@ -61,6 +62,7 @@ export function MovieListF() {
     };
 
 
+
     // Funció per editar una pel·lícula
     const editMovie = (id) => {
         openForm();
@@ -69,7 +71,7 @@ export function MovieListF() {
         setEditActive(true);
     };
 
-    //Funció per obrir el formulari
+    //Funció per obrir i tancar el formulari
     const openForm = () => {
         if (viewForm)setViewForm(false);
         else setViewForm(true);
@@ -86,9 +88,12 @@ export function MovieListF() {
 
         return (
             <section>
-                <button onClick={openForm } className="add-button">ADD MOVIE</button>
+
+                <Slider/>
+                <button onClick={openForm} className="add-button">ADD MOVIE</button>
+                
                 {viewForm ? 
-                <MovieFormF 
+                <MovieFormF
                 addMovie={addMovie} // Pasar paràmetres d'un component a un altre
                 editedMovie={editedMovie} 
                 editActive={editActive} 

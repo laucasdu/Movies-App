@@ -21,6 +21,8 @@ export const movieServices = {
     return movies;
     },
 
+
+    
     deleteMovie(id) {
         const deletedMovie = axios.delete(baseURL + "/movies/" + id).then((res) => res.data);
             return deletedMovie;

@@ -1,13 +1,14 @@
 
 
-.navBar {
 
-  background: rgba(0,0,0,0.9);
+.navBar {
+  background: #252839;
   width: 100vw;
   height: 5vw;
   position: fixed;
   display: flex;
   justify-content: center;
+  align-items: center;
   z-index: 100;
   flex-direction: row;
 
@@ -18,4 +19,44 @@ padding-top: 2rem;
 align-items: center;
 
 }
+
+/* Media Query */
+
+@media screen and (max-width: 415px) {
+
+  .navBar {
+    background: #252839;
+    height: 3em;
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    flex-direction: row;
+  
+  }
+
+}
+
+@media screen and (max-width: 820px) {
+   
+  .navBar {
+    background: #252839;
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    flex-direction: row;
+  
+  }
+
+}  
+
+  
+  
+
+
 

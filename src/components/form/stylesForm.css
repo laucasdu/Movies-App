@@ -7,7 +7,7 @@
   display: flex;
   justify-content:center;
   align-items: center;
-  background: #061729;
+  background: #252839;
 }
 
 
@@ -23,7 +23,7 @@
   
   .button_create {
     width: 100%;
-    background-color: #061729;
+    background-color: #252839;
     color: white;
     font-weight: 600;
     padding: 14px 20px;
@@ -36,13 +36,13 @@
   }
 
   .button_create:hover {
-    background-color: #596FA8;
+    background-color: #bd0a31;
   }
 
 
   .button_update {
     width: 100%;
-    background-color: #1B2631;
+    background-color: #252839;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -54,7 +54,7 @@
   }
   
   .button_update:hover {
-    background-color: #596FA8;
+    background-color: #bd0a31;
   }
   
   .containerForm {
