@@ -9,11 +9,9 @@
     border-radius : 8px;  
 }
 
-/* .movieCard:hover{
-    box-shadow: 0 0 15px #212F3D;
-
-    
-} */
+.movieCard:hover{
+    box-shadow: 0 0 15px #212F3D;  
+} 
 
 
 /* MOVIE IMAGE */

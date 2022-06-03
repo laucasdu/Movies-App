@@ -31,17 +31,33 @@ export function MovieListF() {
      };
   
 
-    // Funció per eliminar una pel·lícula
-    const deleteMovie = (id) => {
-        movieServices.deleteMovie(id).then((res) => {
-            getAllMovies()
-        });
-    };
+    // // Funció per eliminar una pel·lícula
+    // const deleteMovie = (id) => {
+    //     movieServices.deleteMovie(id).then((res) => {
+    //         getAllMovies()
+    //     });
+    // };
+
+
+    //FUNCIÓ PER ESBORRAR UNA PEL·LÍCULA
+    const deleteMovie = (movie) => {    
+        let deleteConfirmed = window.confirm(`really delete ${movie.title}?`);
+        if (!deleteConfirmed) return; //clàusula salvaguarda
+    
+    movieServices.deleteMovie(movie.id).then((res) => {
+        
+        if (res.status === 200) {
+            let filterMovies = movies.filter(item => item.id !==movie.id);
+            setMovies(filterMovies);
+        } 
+    })
+}
+
 
     // Funció per afegir una pel·lícula
     const addMovie = (data) => {
         movieServices.addMovie(data).then((res) => {
-            setMovies([...movies, res]);
+            setMovies([...movies, res]); 
 
         });
 
@@ -52,7 +68,9 @@ export function MovieListF() {
     //Funció per canviar una peli·lícula
         const updateMovie = (newMovie) => {
             movieServices.updateMovie(newMovie.id, newMovie).then((res) => {
-            let movieToUpdate = movies.map((movie) => movie.id === newMovie.id ? newMovie : movie)
+            let movieToUpdate = movies.map((movie) => movie.id === newMovie.id ? newMovie : movie) 
+            // Map es una funció que permit transformar els elements d'una llista i que els canvia a una nova llista amb els
+           //elements transformats.
             setMovies(movieToUpdate)
             // .catch((err) => console.log(err))
         })

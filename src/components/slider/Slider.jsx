@@ -1,13 +1,17 @@
 import React from 'react'
-import image from "../../image/img_starwars.jpeg";
+import image from "../../image/img_starwars.jpg";
 
 
 export default function Slider() {
   
   return (
 
+    
       <div className="Slider-container">
-      <img className="image" src={image} alt="banner"/>      
+        <div className='arrow-left'></div>
+        <img className="image" src={image} alt="banner"/>      
+      <div className='arrow-right'></div>
+
         </div>
 
   )

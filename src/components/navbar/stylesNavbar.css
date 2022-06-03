@@ -44,6 +44,7 @@ align-items: center;
   .navBar {
     background: #252839;
     width: 100vw;
+    height: 5em;
     position: fixed;
     display: flex;
     justify-content: center;

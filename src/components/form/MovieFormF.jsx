@@ -38,7 +38,7 @@ export function MovieFormF ({addMovie,updateMovie,resetInputsForm,editActive, ed
                     <input type="text" onChange={onInputChange} value={newMovies.genre} name="genre" placeholder="Genres"/>
                     <input type="url" onChange={onInputChange} value={newMovies.imgUrl} name="imgUrl" placeholder="Cover image URL"/>
             
-                {editActive?
+                {editActive? // if else
                 <button type="sudmit" className="button_update">
                     <i className="fa-solid fa-pen-to-square"></i></button>
                 : <button type="sudmit" className="button_create">
