@@ -7,10 +7,13 @@
     filter: drop-shadow(2px 1px 6px #7a8188 );
     position: relative;
     border-radius : 8px;  
+    transition-duration: 0.25s;
+
 }
 
 .movieCard:hover{
-    box-shadow: 0 0 15px #212F3D;  
+    box-shadow: 0 0 10px #212F3D;  
+
 } 
 
 
@@ -35,13 +38,6 @@
    
 }
 
-/* serveix per fer el zoom a l'imatge*/
-/* .movieImg_img:hover{
-    transform:scale(1.8) rotate(18deg); 
-    opacity:0.7;
-
-} */
-
 
 
 /* MOVIE INFO */
@@ -49,6 +45,7 @@
 .containerText{
     background-color: #E0DCDC;
     width: 100%;
+    height: 20%;
     position: relative;
     display: flex;
     margin:auto;
@@ -105,6 +102,7 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
+    /* height: 10%; */
     padding-top: 5%;
     border-radius: 0px 0px 8px 8px;
 
@@ -136,6 +134,8 @@
     padding-top: 2%;
     padding-bottom: 2.2%;
     width: 50%;
+    font-size: 90%;
+
     transition-duration: 0.4s;
     background-color: #acacb1;
     border: none;

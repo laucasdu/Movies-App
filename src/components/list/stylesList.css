@@ -9,22 +9,6 @@
 }
 
 
-
-/* .add-button{
-    width: 100vw;
-    height: 4em;
-    font-size: 16px;
-    justify-content: center;
-    align-items: left;
-    display: flex;
-    margin: 0%;
-    background-color: #000000;
-    font-weight: 600;
-    color: #F1F0F0;  
-} */
-
-
-
 .add-button{
     font-family: 'Rubik', sans-serif;
     width: 100vw;
@@ -41,10 +25,7 @@
     cursor: pointer;
     position: relative;
     background-color: rgba(0, 0, 0, 0);
-}
-
-
-      
+}    
       
 .add-button {
     font-size: 20px;
@@ -62,7 +43,6 @@
   .add-button:after {
     content: "";
     background-color: #bd0a31;
-
     width: 100%;
     z-index: -1;
     position: absolute;
