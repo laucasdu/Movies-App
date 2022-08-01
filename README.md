@@ -31,11 +31,12 @@ Also, it is using react-router-dom v.6 to navigate between pages. The applicatio
 
 ## IU DESIGN
 
-![MOVIEAPP_MACKBOOK_DETAIL](https://user-images.githubusercontent.com/102957525/182246983-e5d20373-6e1a-4140-a4bd-00514e6e6db4.jpg)
-
 ![MOVIEAPP_MACKBOOK_HOME](https://user-images.githubusercontent.com/102957525/182247012-cf21d907-e833-4ad7-8081-f2bddd235d09.jpg)
 
+![MOVIEAPP_MACKBOOK_DETAIL](https://user-images.githubusercontent.com/102957525/182246983-e5d20373-6e1a-4140-a4bd-00514e6e6db4.jpg)
+
 ![MOVIEAPP_MOCKUP_IPAD_IPHONE](https://user-images.githubusercontent.com/102957525/182247051-de125c32-1dea-4542-9f50-a429682fe6ea.jpg)
+
 
 ## TECHNOLOGIES
 - HTML 5
