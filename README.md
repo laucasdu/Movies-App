@@ -9,10 +9,6 @@ MOVIE APP
 
 ***
 
-## Link
-
-https://laucasdu.github.io/Movies-App/
-
 ## BRIEFING
 
 This is an application that allows you to create a list of movies using an API and has some features to interact like add, update and delete. I have used the mockAPI server and the Postman API platform for data processing.
@@ -43,6 +39,13 @@ Also, it is using react-router-dom v.6 to navigate between pages. The applicatio
 - CSS 3
 - JS ES6 VANILLA
 - REACT
+- AXIOS
+- REACT ROUTER DOM
+
+## TOOLS
+- Visual Studio Code
+- Api server: Mock Api
+- Api platform: Postman
 
 ## INSTALLATION
 - Required React v.18.0.0
