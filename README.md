@@ -4,7 +4,7 @@ MOVIE APP
 
 ## Table of Contents
 1. [GENERAL INFO](#GENERAL-INFO)
-2. [TECHNOLOGIES](#TECHNOLOGIES)
+2. [TECHNOLOGIES & TOOLS](#TECHNOLOGIES-TOOLS)
 3. [INSTALLATION](#INSTALLATION_)
 
 ***
@@ -43,6 +43,7 @@ Also, it is using react-router-dom v.6 to navigate between pages. The applicatio
 - React router DOM 
 - Postman
 - Visual Studio Code
+- Api server: Mock Api
 
 
 ## INSTALLATION
