@@ -109,7 +109,6 @@ export function MovieListF() {
 
                 <Slider/>
                 <button onClick={openForm} className="add-button">ADD MOVIE</button>
-                
                 {viewForm ? 
                 <MovieFormF
                 addMovie={addMovie} // Pasar paràmetres d'un component a un altre
@@ -120,7 +119,7 @@ export function MovieListF() {
                 
                 {isLoading && <Loader/>}
 
-                (<div className="movieList">
+                <div className="movieList">
                     {movies.map((movie, key) => (
                         <MovieCardF 
                         key={key} 
@@ -128,7 +127,7 @@ export function MovieListF() {
                         deleteMovie={deleteMovie} 
                         editMovie={editMovie} />
                     ))}    
-                </div>)     
+                </div>     
           </section>
         );
     }
