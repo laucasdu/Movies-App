@@ -37,7 +37,7 @@ Also, it is using react-router-dom v.6 to navigate between pages. The applicatio
 ## TECHNOLOGIES & TOOLS
 - HTML 5
 - CSS 3
-- JS ES6 VANILLA
+- JavaScript ES6 Vanilla
 - React
 - Axios
 - React router DOM 
