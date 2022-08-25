@@ -48,7 +48,8 @@ Also, it is using react-router-dom v.6 to navigate between pages. The applicatio
 
 ## INSTALLATION
 
-- Required node.js
+This project was bootstrapped with Create React App therefore requires node.js and npm. Once you've verified node is installed in your directory take the following steps:
+
 
 1. Clone the repository with the following command:  
 ```
