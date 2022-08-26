@@ -29,29 +29,18 @@ export function MovieListF() {
          });
  
      };
-  
+     
 
-    // // Funció per eliminar una pel·lícula
-    // const deleteMovie = (id) => {
-    //     movieServices.deleteMovie(id).then((res) => {
-    //         getAllMovies()
-    //     });
-    // };
-
-
-    //FUNCIÓ PER ESBORRAR UNA PEL·LÍCULA
-    const deleteMovie = (movie) => {    
-        let deleteConfirmed = window.confirm(`really delete ${movie.title}?`);
-        if (!deleteConfirmed) return; //clàusula salvaguarda
-    
-    movieServices.deleteMovie(movie.id).then((res) => {
-        
-        if (res.status === 200) {
-            let filterMovies = movies.filter(item => item.id !==movie.id);
-            setMovies(filterMovies);
-        } 
-    })
-}
+    // Funció per eliminar una pel·lícula
+    const deleteMovie = (id) => {
+        let movieDelete = movies.filter((movie) => movie.id === id);
+        window.confirm(
+          `Delete ${movieDelete[0].title} from the list?`
+        );
+        movieServices.deleteMovie(id).then((res) => {
+            getAllMovies()
+        });
+    };
 
 
     // Funció per afegir una pel·lícula
